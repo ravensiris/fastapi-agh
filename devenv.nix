@@ -9,7 +9,9 @@
       enable = true;
     };
   };
+
   languages.typescript.enable = true;
+  languages.javascript.enable = true;
 
   services.postgres.enable = true;
 }
