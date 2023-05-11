@@ -1,7 +1,13 @@
 { pkgs, ... }:
 
 {
-  packages = [ pkgs.git ];
+  packages = with pkgs; [
+    git
+    python310Packages.python-lsp-server
+    python310Packages.python-lsp-black
+    python310Packages.pylsp-mypy
+    black
+  ];
 
   languages.python = {
     enable = true;
