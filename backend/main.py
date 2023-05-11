@@ -51,6 +51,10 @@ def create_student(user: StudentWrite):
     db.session.refresh(db_student)
     return db_student
 
+@app.get("/students", response_model=list[SchemaStudent])
+def list_students(skip: int = 0, limit: int = 100):
+    return db.session.query(ModelStudent).offset(skip).limit(limit).all()
+
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html():
     return get_swagger_ui_html(
