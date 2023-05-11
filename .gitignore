@@ -6,3 +6,5 @@ devenv.local.nix
 /.direnv/
 .venv
 /backend/__pycache__/
+/backend/alembic/versions/__pycache__/
+/backend/alembic/__pycache__/

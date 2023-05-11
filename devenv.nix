@@ -19,5 +19,13 @@
   languages.typescript.enable = true;
   languages.javascript.enable = true;
 
-  services.postgres.enable = true;
+  services.postgres = {
+    enable = true;
+    initialScript = ''
+      CREATE ROLE postgres WITH LOGIN SUPERUSER PASSWORD 'postgres';
+    '';
+    initialDatabases = [
+      { name = "backend"; }
+    ];
+  };
 }
