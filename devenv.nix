@@ -10,4 +10,6 @@
     };
   };
   languages.typescript.enable = true;
+
+  services.postgres.enable = true;
 }
